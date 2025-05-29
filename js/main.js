@@ -147,7 +147,7 @@ class playGame extends Phaser.Scene {
           this.prizeText.setText(gameOptions.slicePrizes[prize]);
 
           // player can spin again
-          this.canSpin = false;
+          this.canSpin = true;
         },
       });
     }
