@@ -106,7 +106,7 @@ class playGame extends Phaser.Scene {
     // can we spin the wheel?
     if (this.canSpin) {
       // Reset wheel
-      this.create();
+      this.wheel.angle = 0;
 
       // resetting text field
       this.prizeText.setText("");
