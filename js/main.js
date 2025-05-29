@@ -125,7 +125,8 @@ class playGame extends Phaser.Scene {
       var prize =
         gameOptions.slices -
         1 -
-        Math.floor(this.wheel.angle / (360 / gameOptions.slices));
+        //We add 30 degrees to the angle because the wheel starts with the first slice at 30 degrees
+        Math.floor((this.wheel.angle + 30) / (360 / gameOptions.slices));
 
       // now the wheel cannot spin because it's already spinning
       this.canSpin = false;
