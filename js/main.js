@@ -121,17 +121,6 @@ class playGame extends Phaser.Scene {
         degrees += 5;
       }
 
-      // It wraps from 0 to 180, then from -180 to 0, so we convert to use 360 degrees
-      var actualAngle = this.wheel.angle >= 0 ? this.wheel.angle : 360 + this.wheel.angle;
-      console.log("actualAngle: " + actualAngle);
-
-      // before the wheel ends spinning, we already know the prize according to "degrees" rotation and the number of slices
-      var prize =
-        gameOptions.slices -
-        1 -
-        //We add 30 degrees to the angle because the wheel starts with the first slice at 30 degrees
-        Math.floor((actualAngle - 30) / (360 / gameOptions.slices));
-
       // now the wheel cannot spin because it's already spinning
       this.canSpin = false;
 
@@ -155,8 +144,18 @@ class playGame extends Phaser.Scene {
 
         // function to be executed once the tween has been completed
         onComplete: function (tween) {
+          var actualAngle =
+            this.wheel.angle >= 0 ? this.wheel.angle : 360 + this.wheel.angle;
+
           // displaying prize text
-          this.prizeText.setText(gameOptions.slicePrizes[prize]);
+          this.prizeText.setText(
+            gameOptions.slicePrizes[
+              gameOptions.slices -
+                1 -
+                //We add 30 degrees to the angle because the wheel starts with the first slice at 30 degrees
+                Math.floor((actualAngle - 30) / (360 / gameOptions.slices))
+            ]
+          );
 
           // player can spin again
           this.canSpin = true;
