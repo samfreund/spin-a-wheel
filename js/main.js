@@ -146,7 +146,7 @@ class playGame extends Phaser.Scene {
         onComplete: function (tween) {
           var actualAngle =
             this.wheel.angle >= 0 ? this.wheel.angle : 360 + this.wheel.angle;
-
+            console.log(actualAngle);
           // displaying prize text
           this.prizeText.setText(
             gameOptions.slicePrizes[
