@@ -152,7 +152,7 @@ class playGame extends Phaser.Scene {
         // function to be executed once the tween has been completed
         onComplete: function (tween) {
           // displaying prize text
-          this.prizeText.setText(gameOptions.slicePrizes[prize] + "" + this.wheel.angle);
+          this.prizeText.setText(gameOptions.slicePrizes[prize] + "" + this.wheel.angle + " " + prize);
 
           // player can spin again
           this.canSpin = true;
