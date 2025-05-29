@@ -7,11 +7,11 @@ var gameOptions = {
 
   // prize names, starting from 12 o'clock going clockwise
   slicePrizes: [
-    "Slice 1",
+    "You Lose",
     "Slice 2",
     "Slice 3",
     "Slice 4",
-    "Slice 5",
+    "Double Your Money",
     "Slice 6"
   ],
 
@@ -105,6 +105,9 @@ class playGame extends Phaser.Scene {
   spinWheel() {
     // can we spin the wheel?
     if (this.canSpin) {
+      // Reset wheel
+      this.create();
+
       // resetting text field
       this.prizeText.setText("");
 
