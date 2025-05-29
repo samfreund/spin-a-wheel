@@ -8,12 +8,12 @@ var gameOptions = {
 
     // prize names, starting from 12 o'clock going clockwise
     slicePrizes: [
-        "🎉 5% OFF",
-        "🎉 10% OFF",
-        "🎉 15% OFF",
-        "🎉 25% OFF",
-        "🎉 50% OFF",
-        "🎉 FREE PASTRY 🍰"
+        "You Lose",
+        "Double Your Money",
+        "Spin Again",
+        "You Lose",
+        "Double Your Money",
+        "Spin Again"
     ],
 
     // wheel rotation duration, in milliseconds
@@ -30,13 +30,13 @@ window.onload = function () {
         type: Phaser.CANVAS,
 
         // game width, in pixels
-        width: 850,
+        width: 1920,
 
         // game height, in pixels
-        height: 850,
+        height: 1280,
 
         // game background color
-        backgroundColor: 0x880044,
+        backgroundColor: 0x0000FF,
 
         // scenes used by the game
         scene: [playGame]
