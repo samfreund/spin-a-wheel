@@ -12,7 +12,7 @@ var gameOptions = {
     "Spin Again",
     "You Lose",
     "Double Your Money",
-    "Spin Again"
+    "Spin Again",
   ],
 
   // wheel rotation duration, in milliseconds
@@ -121,12 +121,15 @@ class playGame extends Phaser.Scene {
         degrees += 5;
       }
 
+      // It wraps from 0 to 180, then from -180 to 0, so we convert to use 360 degrees
+      var actualAngle = this.wheel.angle > 0 ? this.wheel.angle : 360 + this.wheel.angle;
+
       // before the wheel ends spinning, we already know the prize according to "degrees" rotation and the number of slices
       var prize =
         gameOptions.slices -
         1 -
         //We add 30 degrees to the angle because the wheel starts with the first slice at 30 degrees
-        Math.floor((this.wheel.angle - 30) / (360 / gameOptions.slices));
+        Math.floor((actualAngle - 30) / (360 / gameOptions.slices));
 
       // now the wheel cannot spin because it's already spinning
       this.canSpin = false;
