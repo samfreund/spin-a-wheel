@@ -10,9 +10,10 @@ var gameOptions = {
     "Double Your Money",
     "Spin Again",
     "You Lose",
-    "Double Your Money",
-    "Spin Again",
     "You Lose",
+    "Double Your Money",
+    "Spin Again"
+    
   ],
 
   // wheel rotation duration, in milliseconds
@@ -27,7 +28,7 @@ window.onload = function () {
     type: Phaser.CANVAS,
 
     // game width, in pixels
-    width: 1600,
+    width: 1550,
 
     // game height, in pixels
     height: 850,
