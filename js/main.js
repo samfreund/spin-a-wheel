@@ -125,7 +125,7 @@ class playGame extends Phaser.Scene {
       var prize =
         gameOptions.slices -
         1 -
-        Math.floor(degrees / (360 / gameOptions.slices));
+        Math.floor(this.wheel.angle / (360 / gameOptions.slices));
 
       // now the wheel cannot spin because it's already spinning
       this.canSpin = false;
