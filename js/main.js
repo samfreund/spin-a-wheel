@@ -123,6 +123,7 @@ class playGame extends Phaser.Scene {
 
       // It wraps from 0 to 180, then from -180 to 0, so we convert to use 360 degrees
       var actualAngle = this.wheel.angle >= 0 ? this.wheel.angle : 360 + this.wheel.angle;
+      console.log("actualAngle: " + actualAngle);
 
       // before the wheel ends spinning, we already know the prize according to "degrees" rotation and the number of slices
       var prize =
