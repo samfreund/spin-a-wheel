@@ -7,13 +7,12 @@ var gameOptions = {
 
   // prize names, starting from 12 o'clock going clockwise
   slicePrizes: [
-    "Double Your Money",
-    "Spin Again",
-    "You Lose",
-    "You Lose",
-    "Double Your Money",
-    "Spin Again"
-    
+    "Slice 1",
+    "Slice 2",
+    "Slice 3",
+    "Slice 4",
+    "Slice 5",
+    "Slice 6"
   ],
 
   // wheel rotation duration, in milliseconds
