@@ -153,7 +153,7 @@ class playGame extends Phaser.Scene {
               gameOptions.slices -
                 1 -
                 //We add 30 degrees to the angle because the wheel starts with the first slice at 30 degrees
-                Math.floor((actualAngle > 30 ? actualAngle - 30 : actualAngle) / (360 / gameOptions.slices))
+                Math.floor((actualAngle > 30 ? actualAngle - 30 : 360 - actualAngle) / (360 / gameOptions.slices))
             ]
           );
 
