@@ -104,14 +104,10 @@ class playGame extends Phaser.Scene {
   // function to spin the wheel
   spinWheel() {
     // can we spin the wheel?
+    this.wheel.angle = 0;
     if (this.canSpin) {
       // Reset wheel
       this.wheel.angle = 0;
-      this.wheel = this.add.sprite(
-        game.config.width / 2,
-        game.config.height / 2,
-        "wheel"
-      );
 
       // resetting text field
       this.prizeText.setText("");
@@ -159,7 +155,7 @@ class playGame extends Phaser.Scene {
           this.prizeText.setText(gameOptions.slicePrizes[prize]);
 
           // player can spin again
-          this.canSpin = true;
+          this.canSpin = false;
         },
       });
     }
