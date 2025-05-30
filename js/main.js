@@ -144,16 +144,22 @@ class playGame extends Phaser.Scene {
 
         // function to be executed once the tween has been completed
         onComplete: function (tween) {
+          
+          // The way the wheel is drawn, the angles are a bit funky so we do this to correct for it
           var actualAngle =
             this.wheel.angle >= 0 ? this.wheel.angle : 360 + this.wheel.angle;
           console.log(actualAngle);
+
+          // Adjust the actual angle by a fudge factor as the wheel is drawn with an offset since the pin starts in the center of a slice
+          actualAngle = actualAngle > (180 / gameOptions.slices) ? actualAngle - (180 / gameOptions.slices) : 360 - actualAngle;
+
           // displaying prize text
           this.prizeText.setText(
             gameOptions.slicePrizes[
               gameOptions.slices -
                 1 -
                 //We add 30 degrees to the angle because the wheel starts with the first slice at 30 degrees
-                Math.floor((actualAngle > 30 ? actualAngle - 30 : 360 - actualAngle) / (360 / gameOptions.slices))
+                Math.floor(actualAngle / (360 / gameOptions.slices))
             ]
           );
 
