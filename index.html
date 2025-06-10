@@ -8,5 +8,39 @@
     <script src="js/main.js"></script>
 </head>
 <body>
+    <button id="infoButton">ℹ️</button>
+    
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>About Spin N Win</h2>
+            <p>Welcome to Spin N Win, a fun wheel-spinning game where you can test your luck! This game was built using Phaser.js, a powerful HTML5 game framework.</p>
+            <p>How to play: Simply click or tap anywhere on the screen to spin the wheel. The wheel will rotate and eventually stop on one of the segments. Each segment contains a different prize or outcome.</p>
+            <p>Possible outcomes include doubling your money, getting another spin, or losing. The game is designed to be simple yet entertaining. Enjoy spinning the wheel and good luck!</p>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('infoModal');
+            const btn = document.getElementById('infoButton');
+            const closeBtn = document.querySelector('.close-button');
+            
+            btn.onclick = function() {
+                modal.style.display = 'block';
+            }
+            
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            }
+            
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
 </html>
